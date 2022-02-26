@@ -1,5 +1,9 @@
 <?php
+echo  'Hello World </br>';
 
-echo 'Hello World';
+$a=17;
+$b=20;
+
+echo $a+$b;
 
 ?>
