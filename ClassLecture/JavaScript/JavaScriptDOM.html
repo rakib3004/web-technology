@@ -22,7 +22,7 @@
 </body>
 <script>
     
-	/*
+	
 	 var x = document.getElementById("myHeading");
      console.log(x);
      var pars = document.getElementsByTagName("p");
@@ -33,13 +33,11 @@
     
 	 var items = document.getElementsByClassName("my-text");
      console.log(items[0]);
-	 */
-     /*
+	 
 	 var elem = document.getElementById("myHeading");
      elem.innerHTML = "New Heading from JavaScript !!!";
      elem.style.color = "red";
-	*/
-	/*
+	
      var nd = document.getElementById("myDiv");
      console.log(nd.parentElement);
      console.log(nd.childNodes);
@@ -52,32 +50,27 @@
      console.log(nd.nodeType);
      console.log(document.nodeType);
      console.log(nd.firstChild.nodeType);
-	 */
-	
-	/*
+
      var headingElement = document.createElement("h5");
      var textNode = document.createTextNode("This is from JS !!!!");
      headingElement.appendChild(textNode);
      var nd = document.getElementById("myDiv");
      nd.appendChild(headingElement);
-	 */
-	/*
+	
 	 function addH(){
 		 var headingElement = document.createElement("h5");
 		 var textNode = document.createTextNode("This is from JS !!!!");
 		 headingElement.appendChild(textNode);
 		 var nd = document.getElementById("myDiv");
 		 nd.appendChild(headingElement);
-	 }*/
-	/*
+	 }
    var headingElement = document.createElement("h5");
      var textNode = document.createTextNode("This is from JS !!!!");
      headingElement.appendChild(textNode);
      var nd = document.getElementById("myDiv");
-    // nd.insertBefore(headingElement,nd.firstChild);
-    // nd.insertBefore(headingElement,nd.firstChild.nextSibling);
-	*/
-    // document.getElementById("myHeading").remove(); 
+     nd.insertBefore(headingElement,nd.firstChild);
+     nd.insertBefore(headingElement,nd.firstChild.nextSibling);
+     document.getElementById("myHeading").remove(); 
 
 	
      var headingElement = document.createElement("h5");
