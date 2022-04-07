@@ -3,7 +3,7 @@
 $server = "localhost";
 $user = "root";
 $pass = "";
-$database = "login_register_pure_coding";
+$database = "authentication";
 
 $conn = mysqli_connect($server, $user, $pass, $database);
 
