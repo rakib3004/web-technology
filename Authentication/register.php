@@ -16,29 +16,67 @@ if (isset($_POST['submit'])) {
 	$password = md5($_POST['password']);
 	$cpassword = md5($_POST['cpassword']);
 
-	if ($password == $cpassword) {
-		$sql = "SELECT * FROM users WHERE email='$email'";
-		$result = mysqli_query($conn, $sql);
-		if (!$result->num_rows > 0) {
-			$sql = "INSERT INTO users (username, email, password)
-					VALUES ('$username', '$email', '$password')";
+
+
+		if ($password == $cpassword) {
+			$sql = "SELECT * FROM users WHERE email='$email'";
 			$result = mysqli_query($conn, $sql);
-			if ($result) {
-				echo "<script>alert('Wow! User Registration Completed.')</script>";
-				$username = "";
-				$email = "";
-				$_POST['password'] = "";
-				$_POST['cpassword'] = "";
+			if (!$result->num_rows > 0) {
+
+
+
+				try {
+					$sql = "INSERT INTO users (username, email, password)
+						VALUES ('$username', '$email', '$password')";
+				$result = mysqli_query($conn, $sql);
+
+				if ($result) {
+					echo "<script>alert('Wow! User Registration Completed.')</script>";
+					$username = "";
+					$email = "";
+					$_POST['password'] = "";
+					$_POST['cpassword'] = "";
+				} else {
+					echo "<script>alert('Woops! Something Wrong Went.')</script>";
+				}
+
+				  }
+				  
+				  catch(Exception $e) {
+					echo "<script>alert('User Name Already exists!\n User Unique User Name ')</script>";
+					
+					$username = "";
+					$email = "";
+					$_POST['password'] = "";
+					$_POST['cpassword'] = "";
+
+				  }
+
+
+
+				
+			
 			} else {
-				echo "<script>alert('Woops! Something Wrong Went.')</script>";
+				echo "<script>alert('Woops! Email Already Exists.')</script>";
 			}
+			
 		} else {
-			echo "<script>alert('Woops! Email Already Exists.')</script>";
+			echo "<script>alert('Password Not Matched / This Username Already Exists.')</script>";
 		}
-		
-	} else {
-		echo "<script>alert('Password Not Matched.')</script>";
+/*
 	}
+	else{
+
+	
+		echo "<script>alert('Please Provide another Username! This Username Already Exists.')</script>";
+
+
+	}*/
+
+
+	
+/*}*/
+
 }
 
 ?>
@@ -53,7 +91,7 @@ if (isset($_POST['submit'])) {
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 
-	<title>Register Form - Pure Coding</title>
+	<title>Register Form </title>
 </head>
 <body>
 	<div class="container">
@@ -74,7 +112,7 @@ if (isset($_POST['submit'])) {
 			<div class="input-group">
 				<button name="submit" class="btn">Register</button>
 			</div>
-			<p class="login-register-text">Have an account? <a href="index.php">Login Here</a>.</p>
+			<p class="login-register-text">Have an account? <a href="login.php">Login Here</a>.</p>
 		</form>
 	</div>
 </body>
