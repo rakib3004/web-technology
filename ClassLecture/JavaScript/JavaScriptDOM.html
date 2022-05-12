@@ -4,19 +4,19 @@
     <style>
         .my-text {
             text-align: center;
-            color: red;
+            color: rgb(0, 255, 157);
         }
     </style>
 
 </head>
 
 <body>
-    <h1 id="myHeading">Heading 1</h1>
-    <p>This is a simple paragraph 1</p>
-    <p>This is a simple paragraph 2</p>
-    <p>This is a simple paragraph 3</p>
-    <p>This is a simple paragraph 4</p>
-    <div class="my-text" id="myDiv">A simple Text<h1>Hello Bangladesh 1</h1><h1>Hello Bangladesh 2</h1></div><button onclick="document.getElementById('myHeading').style.color='blue'">click me</button>
+    <h1 id="myHeading">Gazipur City Corporation</h1>
+    <p>Residential Building</p>
+    <p>Industrial Building</p>
+    <p>Commerial Building</p>
+    <p>Mosque</p>
+    <div class="my-text" id="myDiv">Admin Diagram<h1>City Management System</h1><h1>Automation Service</h1></div><button onclick="document.getElementById('myHeading').style.color='blue'">click me</button>
     <br>
 	<button onclick="addH()">click to add H5</button>
 </body>
@@ -35,7 +35,7 @@
      console.log(items[0]);
 	 
 	 var elem = document.getElementById("myHeading");
-     elem.innerHTML = "New Heading from JavaScript !!!";
+     elem.innerHTML = "Dhaka City Corporation !!!";
      elem.style.color = "red";
 	
      var nd = document.getElementById("myDiv");
@@ -52,20 +52,20 @@
      console.log(nd.firstChild.nodeType);
 
      var headingElement = document.createElement("h5");
-     var textNode = document.createTextNode("This is from JS !!!!");
+     var textNode = document.createTextNode("Khulna City Corporation!!!!");
      headingElement.appendChild(textNode);
      var nd = document.getElementById("myDiv");
      nd.appendChild(headingElement);
 	
 	 function addH(){
 		 var headingElement = document.createElement("h5");
-		 var textNode = document.createTextNode("This is from JS !!!!");
+		 var textNode = document.createTextNode("New City Member!!!!");
 		 headingElement.appendChild(textNode);
 		 var nd = document.getElementById("myDiv");
 		 nd.appendChild(headingElement);
 	 }
    var headingElement = document.createElement("h5");
-     var textNode = document.createTextNode("This is from JS !!!!");
+     var textNode = document.createTextNode("Minstry of Public Administration!!!!");
      headingElement.appendChild(textNode);
      var nd = document.getElementById("myDiv");
      nd.insertBefore(headingElement,nd.firstChild);
@@ -74,7 +74,7 @@
 
 	
      var headingElement = document.createElement("h5");
-     var textNode = document.createTextNode("New Heading 5 from JS !!!!");
+     var textNode = document.createTextNode("School!!!!");
      headingElement.appendChild(textNode);
      document.getElementById("myHeading").replaceWith(headingElement);
 	    
